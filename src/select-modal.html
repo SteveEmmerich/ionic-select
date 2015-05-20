@@ -1,0 +1,10 @@
+
+<div class="list">
+    <ion-list>
+        <ion-item collection-repeat="item in collection">
+            <ion-checkbox ng-model="item.selected">{{item.name}}</ion-checkbox>
+        </ion-item>
+    </ion-list>
+</div>
+
+<div class="error_msg" ng-show="submitted === true && selected === false"> Item not selected. Please select an item.</div>
