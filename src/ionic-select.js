@@ -3,7 +3,7 @@
 
 "use strict";
 angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
-    .directive('ion-select', ['$ionicPopup', function ($ionicPopup) {
+    .directive('ion-select', ['$ionicPopup', '$log', function ($ionicPopup, $log) {
         return {
             restrict: 'AE',
             replace: true,
@@ -14,19 +14,22 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
 
             },
             link: function (scope, element, attrs) {
-
+                $log.debug('in link function');
+                $log.debug('vars:' + JSON.stringify([scope.iCollection, scope.iTitle, scope.iSelected]));
                 scope.collection = [];
-                iCollection.forEach(function(item)
+                scope.iCollection.forEach(function(item)
                 {
                     var selected = false;
-                    if(iSelected === item)
+                    if(scope.iSelected === item)
                     selected = true;
-                    collection.push({name:item, selected:selected});
+                    scope.collection.push({name:item, selected:selected});
                 });
-                scope.collection = collection;
+                //scope.collection = collection;
                 scope.submitted = false;
                 scope.selection = scope.iSelected;
                 element.on("click", function () {
+                    $log.debug('button clicked');
+                    $log.debug('vars:' + JSON.stringify([scope.collection, scope.selection, scope.iSelected]));
                     $ionicPopup.show({
                         templateUrl: 'select-modal.html',
                         title: '<strong>Select {{title}}</strong>',
