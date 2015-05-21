@@ -1,6 +1,6 @@
 var path = require('path');
 var gulp = require('gulp');
-var clean = require('gulp-clean');
+var clean = require('gulp-rimraf');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var ngHtml2Js = require("gulp-ng-html2js");
