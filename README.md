@@ -2,6 +2,7 @@
 
 This is a `ionic-selection` bower component which can be used with any Ionic framework's application.
 
+TODO: make demo
 [View Demo](http://steveemmerich.github.io/SelectionModalForIonicFramework/demo/ "Demo") 
 
 
@@ -15,9 +16,6 @@ This is a `ionic-selection` bower component which can be used with any Ionic fra
 
     bower install ionic-select --save
     
-2) Then you can see the following directory structure see in your project folder
-
-![Directory structure](https://lh3.googleusercontent.com/8x3OByTXzzgJSxm-n5Yg8-0g-u2OZt18j9EbvNTgK3Q=w112-h207-p-no "Directory structure")
 
 Give the path of  `style.css, templates.js and ionic-select.js` in your `index.html` file.
 
@@ -73,9 +71,11 @@ Once you click on the button you should see the second screen shot.
 
 ##Versions:
 
-### 1) v0.1.0
+### 1) v0.0.0
 The whole select functionality has been implemented, and can be installed with  `bower install ionic-select --save`
 
+### 1) v0.0.3
+Bug Fixes.`
 
 
 ##License:
@@ -84,10 +84,4 @@ MIT
 ##Contact:
 gmail : sdemmer@gmail.com
 
-github : https://github.com/rajeshwarpatlolla
-
-twitter : https://twitter.com/rajeshwar_9032
-
-facebook : https://www.facebook.com/rajeshwarpatlolla
-
-paypal : rajeshwar.patlolla@gmail.com
+github : https://github.com/steveemmerich
