@@ -26,33 +26,35 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                 scope.collection = collection;
                 scope.submitted = false;
                 scope.selection = scope.iSelected;
-                $ionicPopup.show({
-                    templateUrl: 'select-modal.html',
-                    title: '<strong>Select {{title}}</strong>',
-                    subTitle: '',
-                    scope: scope,
-                    buttons: [
-                        {text: 'Close'},
-                        {
-                            text: 'Select',
-                            type: 'button-positive',
-                            onTap: function (e) {
-                                scope.submitted = true;
-                                scope.collection.forEach(function(item)
-                                {
-                                    if(item.selected)
-                                        scope.selection = item.name;
-                                    scope.selected = true;
-                                    return false;
-                                });
-                                if (scope.selected === true) {
-                                    scope.iSelected = angular.copy(scope.selection);
-                                } else {
-                                    e.preventDefault();
+                element.on("click", function () {
+                    $ionicPopup.show({
+                        templateUrl: 'select-modal.html',
+                        title: '<strong>Select {{title}}</strong>',
+                        subTitle: '',
+                        scope: scope,
+                        buttons: [
+                            {text: 'Close'},
+                            {
+                                text: 'Select',
+                                type: 'button-positive',
+                                onTap: function (e) {
+                                    scope.submitted = true;
+                                    scope.collection.forEach(function(item)
+                                    {
+                                        if(item.selected)
+                                            scope.selection = item.name;
+                                        scope.selected = true;
+                                        return false;
+                                    });
+                                    if (scope.selected === true) {
+                                        scope.iSelected = angular.copy(scope.selection);
+                                    } else {
+                                        e.preventDefault();
+                                    }
                                 }
                             }
-                        }
-                    ]
+                        ]
+                    })
                 })
             }
         }
