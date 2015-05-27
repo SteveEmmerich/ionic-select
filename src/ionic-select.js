@@ -13,6 +13,7 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                 iSelected: '=selected',
                 iCollection: '=collection',
                 iTitle: '=title'
+                // TODO: add multiple and single item support
             },
             link: function (scope, element) 
             {
@@ -28,6 +29,17 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                     }
                     scope.collection.push({name: item, selected: selected});
                 });
+                scope.onChange = function(index)
+                {
+                    for( var i = 0; i < scope.collection.length; ++i)
+                    {
+                        if(i === index)
+                            continue;
+
+                        scope.collection[i].selected = false;
+                    }
+                }
+
                 //scope.collection = collection;
                 scope.submitted = false;
                 scope.selection = scope.iSelected;
