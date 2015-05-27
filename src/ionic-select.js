@@ -19,16 +19,23 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
             {
                 //$log.debug('in link function');
                 //$log.debug('vars:' + JSON.stringify([scope.iCollection, scope.iTitle, scope.iSelected]));
-                scope.collection = [];
-                scope.iCollection.forEach(function(item)
+                scope.createCollection = function()
                 {
-                    var selected = false;
-                    if(scope.iSelected === item)
+                    scope.collection = [];
+                    if(angular.isDefined(scope.iCollection))
                     {
-                        selected = true;
+
+                        scope.iCollection.forEach(function(item)
+                        {
+                            var selected = false;
+                            if(scope.iSelected === item)
+                            {
+                                selected = true;
+                            }
+                            scope.collection.push({name: item, selected: selected});
+                        });
                     }
-                    scope.collection.push({name: item, selected: selected});
-                });
+                };
                 scope.onChange = function(index)
                 {
                     for( var i = 0; i < scope.collection.length; ++i)
@@ -45,6 +52,7 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                 scope.selection = scope.iSelected;
                 element.on('click', function () 
                 {
+                    scope.createCollection();
                     //$log.debug('button clicked');
                     //$log.debug('vars:' + JSON.stringify([scope.collection, scope.selection, scope.iSelected]));
                     $ionicPopup.show(
