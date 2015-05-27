@@ -12,13 +12,13 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
             {
                 iSelected: '=selected',
                 iCollection: '=collection',
-                iTitle: '=title'
+               // iTitle: '=title'
                 // TODO: add multiple and single item support
             },
             link: function (scope, element) 
             {
-                $log.debug('in link function');
-                $log.debug('vars:' + JSON.stringify([scope.iCollection, scope.iTitle, scope.iSelected]));
+                //$log.debug('in link function');
+                //$log.debug('vars:' + JSON.stringify([scope.iCollection, scope.iTitle, scope.iSelected]));
                 scope.collection = [];
                 scope.iCollection.forEach(function(item)
                 {
@@ -45,12 +45,12 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                 scope.selection = scope.iSelected;
                 element.on('click', function () 
                 {
-                    $log.debug('button clicked');
-                    $log.debug('vars:' + JSON.stringify([scope.collection, scope.selection, scope.iSelected]));
+                    //$log.debug('button clicked');
+                    //$log.debug('vars:' + JSON.stringify([scope.collection, scope.selection, scope.iSelected]));
                     $ionicPopup.show(
                     {
                         templateUrl: 'select-modal.html',
-                        title: '<strong>Select ' + scope.iTitle + '</strong>',
+                        title: '<strong>Select</strong>',
                         subTitle: '',
                         scope: scope,
                         buttons: [
