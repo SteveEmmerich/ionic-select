@@ -50,7 +50,7 @@ angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
                     $ionicPopup.show(
                     {
                         templateUrl: 'select-modal.html',
-                        title: '<strong>Select {{title}}</strong>',
+                        title: '<strong>Select {{iTitle}}</strong>',
                         subTitle: '',
                         scope: scope,
                         buttons: [
