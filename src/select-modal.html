@@ -1,7 +1,7 @@
 
 <div class="list">
     <ion-list>
-        <ion-item ng-repeat="item in collection | by $index">
+        <ion-item ng-repeat="item in collection">
             <ion-checkbox ng-model="item.selected" ng-change="onChange($index)">{{item.name}}</ion-checkbox>
         </ion-item>
     </ion-list>
