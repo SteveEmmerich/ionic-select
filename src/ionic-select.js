@@ -3,7 +3,7 @@
 
 'use strict';
 angular.module('ionic-select', ['ionic', 'ionic-select.templates'])
-    .directive('ion-select', ['$ionicPopup', '$log', function ($ionicPopup, $log) 
+    .directive('ionSelect', ['$ionicPopup', '$log', function ($ionicPopup, $log)
     {
         return {
             restrict: 'AE',
